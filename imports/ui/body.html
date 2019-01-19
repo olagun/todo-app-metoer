@@ -1,0 +1,34 @@
+<body>
+  <div class="container">
+    <header>
+      <hgroup>
+        <h1>
+          <span class="count">{{{count}}} </span> Active Task{{{ending}}}
+        </h1>
+        <span>
+          <label class="hide-completed">
+            <div class="checkbox-container-toggle">
+              <input
+                type="checkbox"
+                checked="{{ checked }}"
+                class="toggle-checked"
+              />
+              <span class="check-overlay"></span>
+            </div>
+          </label>
+          <span>Hide Completed Tasks</span>
+        </span>
+      </hgroup>
+
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+      {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
